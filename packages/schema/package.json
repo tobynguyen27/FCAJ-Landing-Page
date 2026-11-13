@@ -1,0 +1,17 @@
+{
+  "name": "@fcaj/schema",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "peerDependencies": {
+    "drizzle-orm": "catalog:backend",
+    "zod": "catalog:types"
+  },
+  "devDependencies": {
+    "typescript": "catalog:types"
+  }
+}

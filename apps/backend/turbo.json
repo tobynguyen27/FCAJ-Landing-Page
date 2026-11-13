@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.ts"],
+      "outputs": ["dist/**"],
+      "passThroughEnv": ["PORT", "DATABASE_URL"]
+    },
+    "test": {
+      "passThroughEnv": ["DATABASE_URL"]
+    },
+    "dev": {
+      "passThroughEnv": ["PORT", "DATABASE_URL"]
+    },
+    "db:push": {
+      "cache": false,
+      "passThroughEnv": ["DATABASE_URL"]
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "passThroughEnv": ["DATABASE_URL"]
+    },
+    "db:seed": {
+      "cache": false,
+      "passThroughEnv": ["DATABASE_URL"]
+    }
+  }
+}

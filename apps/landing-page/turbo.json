@@ -1,0 +1,17 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".vercel/output/**"]
+    },
+    "generate": {
+      "outputs": [".vercel/output/**"]
+    },
+    "preview": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

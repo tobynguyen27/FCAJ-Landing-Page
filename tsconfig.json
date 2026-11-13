@@ -1,0 +1,3 @@
+{
+  "extends": "@tobyngn/tsconfig/bundler/no-dom"
+}

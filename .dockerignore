@@ -1,0 +1,44 @@
+# Everything the backend image does not need at build time.
+
+# Dependencies (reinstalled inside the image from bun.lock)
+**/node_modules
+
+# VCS / editor / CI
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Build & tool caches
+**/.turbo
+**/.next
+**/dist
+**/build
+**/out
+**/coverage
+**/*.tsbuildinfo
+
+# Runtime artefacts produced by scripts/build.ts
+apps/backend/server
+**/*.bun
+
+# Local env files — configuration is injected at runtime
+**/.env
+**/.env.*
+
+# Database schema/migrations are applied out-of-band, not baked into the image
+apps/backend/drizzle
+
+# Logs, OS noise, archives
+**/*.log
+**/*.trace
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+.DS_Store
+**/*.pem
+
+# Docs (if added later)
+**/*.md
+!apps/backend/**/*.md

@@ -1,0 +1,59 @@
+{
+  "name": "omni",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalogs": {
+      "types": {
+        "@tobyngn/tsconfig": "^1.0.1",
+        "@types/bun": "^1.4.4",
+        "typescript": "^7",
+        "zod": "^4.6.7"
+      },
+      "lint": {
+        "oxfmt": "^0.78.0",
+        "oxlint": "1.92.0",
+        "oxlint-tsgolint": "^7.0.2006"
+      },
+      "build": {
+        "turbo": "^2.11.10"
+      },
+      "backend": {
+        "drizzle-kit": "^1.0.0-rc.5",
+        "drizzle-orm": "^1.0.0-rc.5",
+        "elysia": "^2.0.0-rc.3"
+      },
+      "test": {
+        "drizzle-seed": "^1.0.0-rc.5",
+        "vitest": "^5.1.0"
+      },
+      "frontend": {
+        "@elysia/eden": "^2.0.0-rc.1"
+      }
+    }
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev"
+  },
+  "devDependencies": {
+    "@tobyngn/tsconfig": "catalog:types",
+    "oxfmt": "catalog:lint",
+    "oxlint": "catalog:lint",
+    "oxlint-tsgolint": "catalog:lint",
+    "turbo": "catalog:build",
+    "typescript": "catalog:types"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "bun",
+      "version": "1.4.4"
+    }
+  },
+  "engines": {
+    "node": ">=26"
+  }
+}

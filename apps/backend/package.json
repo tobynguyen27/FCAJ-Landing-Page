@@ -1,0 +1,31 @@
+{
+  "name": "@fcaj/leclerc",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "bun run --bun --watch src/index.ts",
+    "build": "bun run --bun scripts/build.ts",
+    "db:push": "bunx --bun drizzle-kit push",
+    "db:generate": "bunx --bun drizzle-kit generate",
+    "db:migrate": "bunx --bun drizzle-kit migrate",
+    "db:seed": "bun run --bun scripts/seed-db.ts",
+    "test": "bunx --bun vitest"
+  },
+  "dependencies": {
+    "@fcaj/schema": "workspace:*",
+    "consola": "^3.4.2",
+    "drizzle-orm": "catalog:backend",
+    "elysia": "catalog:backend",
+    "zod": "catalog:types"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:types",
+    "drizzle-kit": "catalog:backend",
+    "drizzle-seed": "catalog:test",
+    "vitest": "catalog:test"
+  }
+}
